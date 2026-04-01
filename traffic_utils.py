@@ -27,3 +27,13 @@ def flow_to_speed(flow):
         return 60
 
     return min(max(speeds), 60)
+def travel_time(flow, distance):
+    speed = flow_to_speed(flow)
+    
+    # convert km/h → hours
+    time = distance / speed
+    
+    # add 30 sec delay (in hours)
+    time += 30 / 3600
+    
+    return time
